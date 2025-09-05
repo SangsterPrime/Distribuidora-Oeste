@@ -1,10 +1,10 @@
-# Empa & Café
+# Distribuidora Oeste - VitalCO
 
-Sitio estático de venta de empanadas, café y postres con carrito de compras.
+Catálogo estático con carrito de compras: recargas de agua, huevos, accesorios, dispensadores eléctricos y organizadores.
 
 ## Cómo usar
 - Abre el archivo `index.html` en tu navegador (doble clic).
-- Filtra por categoría (Empanadas, Café, Postres) con las fichas superiores.
+- Filtra por categoría (Recargas de agua, Huevos, Accesorios, Dispensadores eléctricos, Organizadores, Todos los artículos) con las fichas superiores.
 - Agrega productos con el botón “Agregar”.
 - Abre el carrito con el botón 🛒; desde allí puedes sumar/restar o eliminar.
 - El total incluye un IVA del 19% (editable en `controles.js`).
@@ -15,9 +15,9 @@ Sitio estático de venta de empanadas, café y postres con carrito de compras.
 - Colores/tema: variables en `estilo.css` dentro de `:root`.
 
 ## Estructura
-- `index.html`: contenido y estructura del menú y carrito.
+- `index.html`: contenido y estructura del catálogo y carrito.
 - `estilo.css`: estilos responsive y tema oscuro.
-- `controles.js`: lógica de filtros, carrito, totales e IVA, y persistencia en `localStorage`.
+- `controles.js`: lógica de filtros, carrito, totales e IVA (0.19), y persistencia en `localStorage`.
 
 ## Notas
 - No requiere servidor ni dependencias: es HTML, CSS y JS puros.

@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Empa & Café - Empanadas, Café y Postres</title>
-		<meta name="description" content="Venta de empanadas, café y postres artesanales. Agrega al carrito y realiza tu pedido fácilmente." />
+		<title>Distribuidora Oeste - VitalCO | Catálogo</title>
+		<meta name="description" content="Distribuidora Oeste - VitalCO: recargas de agua, huevos, accesorios, dispensadores eléctricos y organizadores. Agrega al carrito y arma tu pedido." />
 		<link rel="stylesheet" href="./estilo.css" />
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🥟</text></svg>" />
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💧</text></svg>" />
 	</head>
 	<body>
 		<header class="header">
-			<div class="logo">🥟 Empa & Café</div>
-			<nav class="nav">
-				<a href="#menu">Menú</a>
+			<div class="logo">💧 Distribuidora Oeste - VitalCO</div>
+					<nav class="nav">
+						<a href="#menu">Catálogo</a>
 				<button id="abrirCarrito" class="btn btn--ghost" aria-label="Abrir carrito">
 					🛒 <span id="contadorCarrito" class="badge">0</span>
 				</button>
@@ -22,92 +22,126 @@
 		<main>
 			<section class="hero">
 				<div class="hero__contenido">
-					<h1>Sabor casero al instante</h1>
-					<p>Empanadas crujientes, café recién molido y postres irresistibles.</p>
-					<a class="btn" href="#menu">Ver menú</a>
+					  <h1>Hidratación, hogar y más</h1>
+					  <p>Recargas de agua, huevos frescos y soluciones para tu espacio.</p>
+					  <a class="btn" href="#menu">Ver catálogo</a>
 				</div>
 			</section>
 
 			<section id="menu" class="seccion">
 				<header class="seccion__header">
-					<h2>Menú</h2>
-					<div class="filtros" role="tablist" aria-label="Categorías del menú">
-						<button class="chip activa" data-filtro="todos" role="tab" aria-selected="true">Todos</button>
-						<button class="chip" data-filtro="empanadas" role="tab">Empanadas</button>
-						<button class="chip" data-filtro="cafe" role="tab">Café</button>
-						<button class="chip" data-filtro="postres" role="tab">Postres</button>
+								<h2>Catálogo</h2>
+					  <div class="filtros" role="tablist" aria-label="Categorías del catálogo">
+									<button class="chip activa" data-filtro="todos" role="tab" aria-selected="true">Todos los artículos</button>
+									<button class="chip" data-filtro="recargas" role="tab">Recargas de agua</button>
+									<button class="chip" data-filtro="huevos" role="tab">Huevos</button>
+									<button class="chip" data-filtro="accesorios" role="tab">Accesorios</button>
+									<button class="chip" data-filtro="dispensadores" role="tab">Dispensadores eléctricos</button>
+									<button class="chip" data-filtro="organizadores" role="tab">Organizadores de espacios</button>
 					</div>
 				</header>
 
 				<div class="grid" id="listaProductos">
-					<!-- Empanadas -->
-					<article class="producto" data-categoria="empanadas" data-id="emp_clasica" data-nombre="Empanada Clásica" data-precio="3000">
-						<div class="producto__img" aria-hidden="true">🥟</div>
-						<h3 class="producto__titulo">Empanada Clásica</h3>
-						<p class="producto__desc">Rellena de carne y papa.</p>
-						<div class="producto__precio" data-precio-texto>$3.000</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
-					<article class="producto" data-categoria="empanadas" data-id="emp_pollo" data-nombre="Empanada de Pollo" data-precio="3500">
-						<div class="producto__img" aria-hidden="true">🥟</div>
-						<h3 class="producto__titulo">Empanada de Pollo</h3>
-						<p class="producto__desc">Pollo desmechado con maíz.</p>
-						<div class="producto__precio" data-precio-texto>$3.500</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
-					<article class="producto" data-categoria="empanadas" data-id="emp_queso" data-nombre="Empanada de Queso" data-precio="3200">
-						<div class="producto__img" aria-hidden="true">🧀</div>
-						<h3 class="producto__titulo">Empanada de Queso</h3>
-						<p class="producto__desc">Queso fundido, crocante y doradita.</p>
-						<div class="producto__precio" data-precio-texto>$3.200</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
+								<!-- Recargas de agua -->
+											<article class="producto" data-categoria="recargas" data-id="recarga_2" data-nombre="Recarga x2 botellones 20L" data-precio="4600">
+									<div class="producto__img img-cargando"><img src="./imagenes/2recarga.JPG" alt="Recarga de agua por 2 botellones" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Recarga x2 botellones 20L</h3>
+									<p class="producto__desc">Servicio de recarga a domicilio.</p>
+												<div class="producto__precio" data-precio-texto>$4.600</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+											<article class="producto" data-categoria="recargas" data-id="recarga_3" data-nombre="Recarga x3 botellones 20L" data-precio="6900">
+									<div class="producto__img img-cargando"><img src="./imagenes/3recargas.JPG" alt="Recarga de agua por 3 botellones" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Recarga x3 botellones 20L</h3>
+									<p class="producto__desc">Ideal para la semana.</p>
+												<div class="producto__precio" data-precio-texto>$6.900</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
 
-					<!-- Café -->
-					<article class="producto" data-categoria="cafe" data-id="caf_americano" data-nombre="Café Americano" data-precio="4000">
-						<div class="producto__img" aria-hidden="true">☕</div>
-						<h3 class="producto__titulo">Café Americano</h3>
-						<p class="producto__desc">Taza grande, cuerpo suave.</p>
-						<div class="producto__precio" data-precio-texto>$4.000</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
-					<article class="producto" data-categoria="cafe" data-id="caf_capuccino" data-nombre="Capuccino" data-precio="5500">
-						<div class="producto__img" aria-hidden="true">☕🫧</div>
-						<h3 class="producto__titulo">Capuccino</h3>
-						<p class="producto__desc">Espuma cremosa, toque de cacao.</p>
-						<div class="producto__precio" data-precio-texto>$5.500</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
-					<article class="producto" data-categoria="cafe" data-id="caf_latte" data-nombre="Latte" data-precio="6000">
-						<div class="producto__img" aria-hidden="true">🥛☕</div>
-						<h3 class="producto__titulo">Latte</h3>
-						<p class="producto__desc">Suave y lácteo, perfecto para la tarde.</p>
-						<div class="producto__precio" data-precio-texto>$6.000</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
+								<!-- Huevos -->
+														<article class="producto" data-categoria="huevos" data-id="huevo_30" data-nombre="Huevo Extra x30" data-precio="18000">
+															<div class="producto__img img-cargando"><img src="./imagenes/30huevos.JPG" alt="Cubeta de 30 huevos Extra" loading="lazy" width="640" height="480" decoding="async"></div>
+												<h3 class="producto__titulo">Huevo Extra x30</h3>
+									<p class="producto__desc">Frescos y seleccionados.</p>
+									<div class="producto__precio" data-precio-texto>$18.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+														<article class="producto" data-categoria="huevos" data-id="huevo_180" data-nombre="Huevo Extra caja x180" data-precio="95000">
+															<div class="producto__img img-cargando"><img src="./imagenes/180caja.JPG" alt="Caja de 180 huevos Extra" loading="lazy" width="640" height="480" decoding="async"></div>
+												<h3 class="producto__titulo">Huevo Extra caja x180</h3>
+									<p class="producto__desc">Para negocios o familias grandes.</p>
+									<div class="producto__precio" data-precio-texto>$95.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
 
-					<!-- Postres -->
-					<article class="producto" data-categoria="postres" data-id="pos_dona" data-nombre="Dona Glaseada" data-precio="3500">
-						<div class="producto__img" aria-hidden="true">🍩</div>
-						<h3 class="producto__titulo">Dona Glaseada</h3>
-						<p class="producto__desc">Clásica, dulce y esponjosa.</p>
-						<div class="producto__precio" data-precio-texto>$3.500</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
-					<article class="producto" data-categoria="postres" data-id="pos_brownie" data-nombre="Brownie" data-precio="4200">
-						<div class="producto__img" aria-hidden="true">🍫</div>
-						<h3 class="producto__titulo">Brownie</h3>
-						<p class="producto__desc">Chocolate intenso con nueces.</p>
-						<div class="producto__precio" data-precio-texto>$4.200</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
-					<article class="producto" data-categoria="postres" data-id="pos_cheesecake" data-nombre="Cheesecake" data-precio="7000">
-						<div class="producto__img" aria-hidden="true">🍰</div>
-						<h3 class="producto__titulo">Cheesecake</h3>
-						<p class="producto__desc">Cremoso con base crocante.</p>
-						<div class="producto__precio" data-precio-texto>$7.000</div>
-						<button class="btn add-to-cart">Agregar</button>
-					</article>
+								<!-- Accesorios -->
+								<article class="producto" data-categoria="accesorios" data-id="pack_bidones" data-nombre="Pack para bidones" data-precio="10000">
+									<div class="producto__img img-cargando"><img src="./imagenes/packforbidones.JPG" alt="Pack de accesorios para bidones" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Pack para bidones</h3>
+									<p class="producto__desc">Tapas, picos y sellos.</p>
+									<div class="producto__precio" data-precio-texto>$10.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+											<article class="producto" data-categoria="accesorios" data-id="disp_mesa" data-nombre="Dispensador de mesa" data-precio="6990">
+									<div class="producto__img img-cargando"><img src="./imagenes/dispensordemesa.JPG" alt="Dispensador de mesa para botellón" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Dispensador de mesa</h3>
+									<p class="producto__desc">Compacto y práctico.</p>
+												<div class="producto__precio" data-precio-texto>$6.990</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+								<article class="producto" data-categoria="accesorios" data-id="disp_pedestal" data-nombre="Dispensador pedestal" data-precio="75000">
+									<div class="producto__img img-cargando"><img src="./imagenes/dispensadorpedestal.JPG" alt="Dispensador de pedestal" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Dispensador pedestal</h3>
+									<p class="producto__desc">Para oficinas y salas.</p>
+									<div class="producto__precio" data-precio-texto>$75.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+
+								<!-- Dispensadores eléctricos -->
+											<article class="producto" data-categoria="dispensadores" data-id="bomba_usb" data-nombre="Bomba eléctrica USB" data-precio="3990">
+									<div class="producto__img img-cargando"><img src="./imagenes/bombaUSB.JPG" alt="Bomba eléctrica USB para agua" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Bomba eléctrica USB</h3>
+									<p class="producto__desc">Recargable, fácil de usar.</p>
+												<div class="producto__precio" data-precio-texto>$3.990</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+											<article class="producto" data-categoria="dispensadores" data-id="bomba_usb_premium" data-nombre="Bomba USB Premium" data-precio="9990">
+									<div class="producto__img img-cargando"><img src="./imagenes/bombaUSBpremium.JPG" alt="Bomba eléctrica USB premium" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Bomba USB Premium</h3>
+									<p class="producto__desc">Mayor caudal y autonomía.</p>
+												<div class="producto__precio" data-precio-texto>$9.990</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+								<article class="producto" data-categoria="dispensadores" data-id="disp_lb_b2" data-nombre="Dispensador LB-B2" data-precio="90000">
+									<div class="producto__img img-cargando"><img src="./imagenes/LB-B2.JPG" alt="Dispensador modelo LB-B2" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Dispensador LB-B2</h3>
+									<p class="producto__desc">Robusto y eficiente.</p>
+									<div class="producto__precio" data-precio-texto>$90.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+								<article class="producto" data-categoria="dispensadores" data-id="disp_sm_v1" data-nombre="Dispensador SM-V1" data-precio="110000">
+									<div class="producto__img img-cargando"><img src="./imagenes/dispensadorSM-V1.JPG" alt="Dispensador modelo SM-V1" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Dispensador SM-V1</h3>
+									<p class="producto__desc">Moderno y silencioso.</p>
+									<div class="producto__precio" data-precio-texto>$110.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+
+								<!-- Organizadores -->
+								<article class="producto" data-categoria="organizadores" data-id="org_cocina" data-nombre="Organizador de cocina" data-precio="28000">
+									<div class="producto__img producto__img--emoji" aria-hidden="true">🧺</div>
+									<h3 class="producto__titulo">Organizador de cocina</h3>
+									<p class="producto__desc">Multiusos apilable.</p>
+									<div class="producto__precio" data-precio-texto>$28.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
+								<article class="producto" data-categoria="organizadores" data-id="org_bano" data-nombre="Organizador de baño" data-precio="24000">
+									<div class="producto__img producto__img--emoji" aria-hidden="true">🧼</div>
+									<h3 class="producto__titulo">Organizador de baño</h3>
+									<p class="producto__desc">Estantería antióxido.</p>
+									<div class="producto__precio" data-precio-texto>$24.000</div>
+									<button class="btn add-to-cart">Agregar</button>
+								</article>
 				</div>
 			</section>
 		</main>
@@ -124,22 +158,36 @@
 					<span>Subtotal</span>
 					<strong id="carritoSubtotal">$0</strong>
 				</div>
-				<div class="linea">
-					<span>IVA (19%)</span>
-					<strong id="carritoImpuestos">$0</strong>
-				</div>
 				<div class="linea total">
 					<span>Total</span>
 					<strong id="carritoTotal">$0</strong>
 				</div>
-				<button id="btnPagar" class="btn btn--full">Finalizar pedido</button>
+						<div class="form">
+							<label class="campo">
+								<span>Nombre</span>
+								<input id="cliNombre" type="text" placeholder="Tu nombre" autocomplete="name" />
+							</label>
+							<label class="campo">
+								<span>Dirección</span>
+								<input id="cliDireccion" type="text" placeholder="Calle, número, barrio" autocomplete="address-line1" />
+							</label>
+							<label class="campo">
+								<span>Notas</span>
+								<textarea id="cliNotas" rows="2" placeholder="Referencias, horario, piso…"></textarea>
+							</label>
+						</div>
+			<small class="nota">Precios con IVA incluido.</small>
+			<button id="btnPagar" class="btn btn--full">Pedir por WhatsApp</button>
 			</div>
 		</aside>
 
 		<div id="overlay" class="overlay" hidden></div>
 
+		<!-- Notificaciones -->
+		<div id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></div>
+
 		<footer class="footer">
-			<small>© <span id="anio"></span> Empa & Café. Hecho con sabor.</small>
+			<small>© <span id="anio"></span> Distribuidora Oeste - VitalCO.</small>
 		</footer>
 
 		<script src="./controles.js" defer></script>
