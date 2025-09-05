@@ -1,3 +1,9 @@
+/*
+  © 2025 S4ngster — Licencia S4ngster 2025
+  Uso interno de Distribuidora Oeste. No redistribuir.
+*/
+
+
 // Utilidades
 const formato = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
 const $ = (sel, ctx=document) => ctx.querySelector(sel);
