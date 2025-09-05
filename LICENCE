@@ -1,41 +1,62 @@
 Licencia S4ngster 2025 (Uso Interno — Modificación Permitida — Sin Comercialización)
 © 2025 Joel Sangster (S4ngster). Todos los derechos reservados.
 
-1) Concesión de uso:
-   Se otorga a Distribuidora Oeste una licencia no exclusiva, no transferible, revocable,
-   para utilizar este software (HTML, CSS, JS y recursos asociados) únicamente en sus
-   operaciones internas. Se permite la modificación para adaptación a las necesidades de la
-   Empresa.
+1) Concesión de uso y alcance
+   Se otorga a Distribuidora Oeste una licencia no exclusiva, no transferible (salvo lo indicado en 10),
+   revocable, para utilizar este software (HTML, CSS, JS y recursos asociados) en sus operaciones
+   internas. Se permite la modificación para adaptación a las necesidades de la Empresa.
+   Se autoriza expresamente el despliegue público del sitio para fines comerciales propios
+   (venta/marketing) de la Empresa, siempre que no se distribuya el código fuente a terceros.
 
-2) Restricciones:
-   - Prohibida la reventa, sublicencia, distribución pública o comercialización del software,
+2) Entornos y copias
+   Se permite el uso en entornos de desarrollo, pruebas, staging y producción, así como la creación
+   de copias de respaldo razonables, siempre bajo control de la Empresa.
+
+3) Restricciones
+   - Prohibida la reventa, sublicencia, distribución pública del código o comercialización del software,
      original o modificado, sin autorización escrita del Autor.
-   - Queda prohibido eliminar los avisos de copyright del Autor.
+   - Prohibido eliminar los avisos de copyright del Autor.
+   - Queda prohibido usar la marca o el nombre del Autor para promocionar derivados sin permiso escrito.
 
-3) Propiedad intelectual:
-   El Autor conserva todos los derechos sobre el software original. La Empresa no adquiere
-   derechos de propiedad intelectual, salvo la licencia de uso limitada aquí descrita.
-   Las modificaciones internas de la Empresa no otorgan derecho de distribución.
+4) Propiedad intelectual
+   El Autor conserva todos los derechos sobre el software original. La Empresa no adquiere derechos de
+   propiedad intelectual, salvo la licencia limitada aquí descrita. Las modificaciones internas de la Empresa
+   no otorgan derecho de distribución.
 
-4) Créditos:
-   Todo uso del software deberá mantener visible el aviso de copyright del Autor en los
-   archivos fuente.
+5) Terceros y componentes
+   El software puede integrar recursos de terceros. Dichos recursos conservan sus propias licencias.
+   Consulte el archivo NOTICE para detalles y atribuciones.
 
-5) Soporte y mantenimiento:
-   No se incluyen servicios de soporte o mantenimiento dentro de esta licencia. Cualquier
-   asistencia técnica, actualización o mejora deberá ser contratada aparte con el Autor.
+6) Privacidad y datos personales
+   El flujo de pedido puede incluir envío de datos personales (p. ej., nombre/dirección/notas) vía WhatsApp.
+   La Empresa es responsable de obtener los consentimientos necesarios, cumplir la normativa aplicable
+   (p. ej., Ley 19.628, GDPR si correspondiese) y definir sus políticas de privacidad. El Autor no procesa ni
+   almacena datos de usuarios finales.
 
-6) Responsabilidad:
-   El software se entrega “TAL CUAL”, sin garantías de ningún tipo. El Autor no se hace
-   responsable por daños directos o indirectos derivados de su uso.
+7) Soporte y mantenimiento
+   No se incluyen servicios de soporte o mantenimiento. Cualquier asistencia técnica, actualización o mejora
+   deberá ser contratada aparte con el Autor.
 
-7) Terminación:
-   El incumplimiento de estos términos revoca la licencia automáticamente. En tal caso, la
-   Empresa deberá cesar el uso del software y eliminar todas las copias.
+8) Exclusión de garantías y limitación de responsabilidad
+   El software se entrega “TAL CUAL”, sin garantías de ningún tipo, expresas o implícitas. En ningún caso el
+   Autor será responsable por daños directos, indirectos, incidentales, especiales o consecuentes derivados del uso.
 
-8) Jurisdicción:
-   Este acuerdo se rige por las leyes de Chile. Cualquier disputa se resolverá ante los
-   tribunales de Santiago.
+9) Duración y terminación
+   La licencia es de duración indefinida mientras se cumplan estos términos. El incumplimiento revoca la licencia
+   automáticamente; en tal caso, la Empresa deberá cesar el uso y eliminar las copias.
+
+10) Cesión
+   No transferible salvo reorganización corporativa, fusión o cambio de razón social de la Empresa, manteniendo
+   continuidad operativa y notificando por escrito al Autor.
+
+11) Ley aplicable y jurisdicción
+   Este acuerdo se rige por las leyes de Chile. Cualquier disputa se resolverá ante los tribunales de Santiago.
+
+12) Disposiciones varias
+   - Acuerdo íntegro: este documento constituye el acuerdo completo entre las partes sobre su objeto.
+   - Modificaciones: solo serán válidas por escrito y firmadas por el Autor.
+   - Divisibilidad: si alguna cláusula se declara inválida, las restantes seguirán vigentes.
+   - Idioma: la versión en español prevalece.
 
 Al usar este software, la Empresa acepta íntegramente estos términos.
 
