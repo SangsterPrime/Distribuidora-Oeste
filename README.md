@@ -39,4 +39,5 @@ Catálogo estático con carrito y pedido por WhatsApp. Pensado para vender recar
 - El carrito se guarda solo en el navegador del usuario (no hay servidor ni base de datos).
 
 ## Licencia
-Uso libre para fines personales o comerciales. Agradece con una estrella si te sirvió.
+
+Distribuido bajo **Licencia S4ngster 2025 (uso restringido)** — ver archivo LICENSE para detalles.
