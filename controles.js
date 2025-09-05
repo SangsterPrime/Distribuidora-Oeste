@@ -210,6 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
 					nombre||direccion||notas ? '' : null,
 				'¿Me confirmas disponibilidad y tiempo de entrega?'
 				].filter(Boolean).join('\n');
+			// Vaciar carrito tras solicitar el pedido
+			estado.carrito = {};
+			guardarCarrito();
+			renderCarrito();
 			openWhatsApp(texto);
 		});
 
