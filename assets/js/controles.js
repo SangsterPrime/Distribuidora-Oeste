@@ -279,6 +279,34 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Slider: swipe en móvil; flechas en escritorio (pointer fino)
 	const carrusel = $('#listaPromos.scroll-promos');
 	if(carrusel){
+		// Fallback iOS: arrastrar para desplazar (soluciona casos donde Safari ignora pan-x)
+		(function enableIOSDragScroll(el){
+			const isIOS = /iP(ad|hone|od)/.test(navigator.platform) || (/Mac/.test(navigator.platform) && 'ontouchend' in document);
+			if(!isIOS) return;
+			let dragging = false; let startX = 0; let startY = 0; let startScrollLeft = 0; let lockedDir = '';
+			el.addEventListener('touchstart', (e)=>{
+				if(!e.touches || e.touches.length!==1) return;
+				const t = e.touches[0];
+				dragging = true; lockedDir = '';
+				startX = t.pageX; startY = t.pageY; startScrollLeft = el.scrollLeft;
+			}, { passive:true });
+			el.addEventListener('touchmove', (e)=>{
+				if(!dragging) return;
+				const t = e.touches && e.touches[0]; if(!t) return;
+				const dx = t.pageX - startX; const dy = t.pageY - startY;
+				if(!lockedDir){ lockedDir = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'; }
+				if(lockedDir === 'x'){
+					// Capturar gesto horizontal y desplazar
+					e.preventDefault(); // requiere passive:false
+					el.scrollLeft = startScrollLeft - dx;
+				} else {
+					// Dejar pasar el scroll vertical
+					return;
+				}
+			}, { passive:false });
+			['touchend','touchcancel'].forEach(evt=> el.addEventListener(evt, ()=>{ dragging=false; lockedDir=''; }, { passive:true }));
+		})(carrusel);
+
 		// Evitar aperturas accidentales de WhatsApp durante el swipe horizontal
 		let startX = 0, startY = 0, moved = false;
 		carrusel.addEventListener('pointerdown', (e)=>{ startX = e.clientX; startY = e.clientY; moved = false; }, { passive:true });
