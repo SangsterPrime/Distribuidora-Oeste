@@ -163,6 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
+	// En el hero, dar prioridad de carga a las 3 promos (mejora iOS Safari)
+	$$('#listaPromos .producto__img img').forEach(img=>{
+		try{ img.loading = 'eager'; }catch{}
+		// Sugerir al navegador prioridad alta si soporta
+		try{ img.fetchPriority = 'high'; }catch{}
+	});
+
 	// Clicks globales (delegación)
 	document.body.addEventListener('click', (ev)=>{
 		const tgt = ev.target;
@@ -269,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	aplicarFiltro('todos');
 
-	// Slider estático y amigable: sin flechas ni puntos; solo swipe/scroll
+	// Slider: swipe en móvil; flechas en escritorio (pointer fino)
 	const carrusel = $('#listaPromos.scroll-promos');
 	if(carrusel){
 		// Evitar aperturas accidentales de WhatsApp durante el swipe horizontal
@@ -281,6 +288,58 @@ document.addEventListener('DOMContentLoaded', () => {
 		carrusel.addEventListener('click', (e)=>{
 			if(moved){ e.stopPropagation(); e.preventDefault(); }
 		}, true);
+
+		// Arrows solo en escritorio
+		const isDesktop = matchMedia('(hover: hover) and (pointer: fine)').matches;
+		if(isDesktop){
+			const slides = $$('.producto', carrusel);
+			const contHero = carrusel.closest('.hero__contenido');
+			if(slides.length > 1 && contHero){
+				const btnPrev = document.createElement('button');
+				btnPrev.className = 'scroll-promos__arrow prev';
+				btnPrev.setAttribute('aria-label','Anterior');
+				btnPrev.innerHTML = '‹';
+				const btnNext = document.createElement('button');
+				btnNext.className = 'scroll-promos__arrow next';
+				btnNext.setAttribute('aria-label','Siguiente');
+				btnNext.innerHTML = '›';
+				contHero.append(btnPrev, btnNext);
+
+				const indexActual = ()=>{
+					const rects = slides.map(s=> s.getBoundingClientRect());
+					const mid = carrusel.getBoundingClientRect().left + carrusel.clientWidth/2;
+					let best = 0, bestDist = Infinity;
+					rects.forEach((r,i)=>{
+						const center = r.left + r.width/2;
+						const d = Math.abs(center - mid);
+						if(d < bestDist){ bestDist = d; best = i; }
+					});
+					return best;
+				};
+
+				const scrollToIndex = (i)=>{
+					const target = slides[i]; if(!target) return;
+					target.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+					updateDisabled(i);
+				};
+
+				const updateDisabled = (i)=>{
+					btnPrev.disabled = (i <= 0);
+					btnNext.disabled = (i >= slides.length-1);
+				};
+
+				btnPrev.addEventListener('click', ()=>{ scrollToIndex(Math.max(0, indexActual()-1)); });
+				btnNext.addEventListener('click', ()=>{ scrollToIndex(Math.min(slides.length-1, indexActual()+1)); });
+
+				// Mantener estado deshabilitado al hacer scroll manual con rueda/trackpad
+				let t; carrusel.addEventListener('scroll', ()=>{
+					clearTimeout(t); t = setTimeout(()=> updateDisabled(indexActual()), 80);
+				}, { passive:true });
+
+				// Estado inicial
+				updateDisabled(indexActual());
+			}
+		}
 	}
 
 			// Construye una frase natural por ítem, p.ej. "Huevo Extra x30" -> "quiero 30 huevos extra"

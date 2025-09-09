@@ -9,8 +9,8 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
 
 ### Cambiado
 - Botón “Pedir por WhatsApp”: color más visible y armónico, con mejor foco accesible.
-- Preview del hero: carrusel estático y simple, 1 imagen por vista con scroll-snap centrado; sin controles visibles.
-	Solo se mueven las imágenes (formato 1:1 con object-fit: cover), scrollbars ocultos.
+ - Preview del hero: carrusel estático y simple, 1 imagen por vista con scroll-snap centrado; sin controles en móvil y con flechas de navegación en escritorio.
+ 	Solo se mueven las imágenes (formato 1:1 con object-fit: cover), scrollbars ocultos.
 - Compatibilidad iPhone/Android: safe areas en header/footer y mejoras táctiles (touch-action: pan-x pinch-zoom,
 	desactivar selección/callout en la imagen) para swipe más fluido.
 
@@ -18,9 +18,12 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
 - Promo #1 en la preview: reencuadre de imagen (object-position) para que se aprecie mejor el contenido
 	dentro del formato cuadrado, manteniendo “object-fit: cover” (sin bandas negras).
 - Evitar aperturas accidentales de WhatsApp al deslizar el carrusel (guard de swipe antes del click).
+ - Carga de imágenes en iPhone 14 dentro del slider: prioridad de carga en las 3 promos (loading=eager, fetchPriority=high)
+ 	y hints de render (backface-visibility, translateZ) para un scroll más fluido en iOS.
+ - Imagen de Promo #2 actualizada a un asset existente (evita 404 intermitentes en Safari móvil).
 
 ### Eliminado
-- Controles del carrusel (flechas y puntos) en la preview del hero; la navegación ahora es solo por swipe/scroll nativo.
+ - Puntos de paginación del carrusel en la preview del hero (la navegación es por swipe y, en escritorio, con flechas).
 
 ## [1.2.0] - 2025-09-08
 ### Añadido

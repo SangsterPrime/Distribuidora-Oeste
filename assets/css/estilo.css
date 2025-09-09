@@ -139,7 +139,7 @@ body{
 .scroll-promos#listaPromos::-webkit-scrollbar{display:none}
 .scroll-promos#listaPromos .producto{width:100%;flex:0 0 100%;scroll-snap-align:center;background:transparent;border:0;box-shadow:none;padding:0;gap:0}
 .scroll-promos#listaPromos .producto__img{aspect-ratio:1/1; border-radius:14px; overflow:hidden}
-.scroll-promos#listaPromos .producto__img img{width:100%;height:100%;object-fit:cover}
+.scroll-promos#listaPromos .producto__img img{width:100%;height:100%;object-fit:cover;backface-visibility:hidden;transform:translateZ(0)}
 .scroll-promos#listaPromos .producto__img img{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .scroll-promos#listaPromos .producto__titulo,
 .scroll-promos#listaPromos .producto__desc,
