@@ -135,7 +135,7 @@ body{
 .scroll-promos .producto{width:clamp(240px, 70vw, 320px);flex:0 0 auto;scroll-snap-align:center;scroll-snap-stop:always;padding:10px}
 
 /* Ajustes de proporción/typography para el preview del hero en index */
-.scroll-promos#listaPromos{gap:0;padding-inline:0;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;touch-action:pan-x pinch-zoom}
+.scroll-promos#listaPromos{gap:0;padding-inline:0;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;touch-action:pan-y pinch-zoom}
 .scroll-promos#listaPromos::-webkit-scrollbar{display:none}
 .scroll-promos#listaPromos .producto{width:100%;flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;background:transparent;border:0;box-shadow:none;padding:0;gap:0}
 .scroll-promos#listaPromos .producto__img{aspect-ratio:1/1; border-radius:14px; overflow:hidden}
