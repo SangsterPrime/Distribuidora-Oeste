@@ -269,72 +269,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	aplicarFiltro('todos');
 
-	// Carrusel ligero para el preview del hero
+	// Slider estático y amigable: sin flechas ni puntos; solo swipe/scroll
 	const carrusel = $('#listaPromos.scroll-promos');
 	if(carrusel){
-		const contHero = carrusel.closest('.hero__contenido');
-		const slides = $$('.producto', carrusel);
-		// Crear flechas
-		const btnPrev = document.createElement('button');
-		btnPrev.className = 'scroll-promos__arrow prev';
-		btnPrev.setAttribute('aria-label','Anterior');
-		btnPrev.innerHTML = '‹';
-		const btnNext = document.createElement('button');
-		btnNext.className = 'scroll-promos__arrow next';
-		btnNext.setAttribute('aria-label','Siguiente');
-		btnNext.innerHTML = '›';
-		contHero?.append(btnPrev, btnNext);
-
-		// Dots
-		const pag = document.createElement('div');
-		pag.className = 'scroll-promos__paginacion';
-		slides.forEach((_,i)=>{
-			const d = document.createElement('button');
-			d.className = 'scroll-promos__dot'+(i===0?' activo':'');
-			d.setAttribute('aria-label', `Ir al slide ${i+1}`);
-			pag.appendChild(d);
-			d.addEventListener('click', ()=> scrollToIndex(i));
-		});
-		// Colocar los puntos justo después del carrusel, antes del CTA
-		carrusel.insertAdjacentElement('afterend', pag);
-
-		function indexActual(){
-			const rects = slides.map(s=> s.getBoundingClientRect());
-			const mid = carrusel.getBoundingClientRect().left + carrusel.clientWidth/2;
-			let best = 0, bestDist = Infinity;
-			rects.forEach((r,i)=>{
-				const center = r.left + r.width/2;
-				const d = Math.abs(center - mid);
-				if(d < bestDist){ bestDist = d; best = i; }
-			});
-			return best;
-		}
-
-		function updateDots(i){
-			$$('.scroll-promos__dot', pag).forEach((el,idx)=> el.classList.toggle('activo', idx===i));
-		}
-
-		function scrollToIndex(i){
-			const target = slides[i];
-			if(!target) return;
-			target.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
-			updateDots(i);
-		}
-
-		btnPrev.addEventListener('click', ()=>{
-			const i = Math.max(0, indexActual()-1);
-			scrollToIndex(i);
-		});
-		btnNext.addEventListener('click', ()=>{
-			const i = Math.min(slides.length-1, indexActual()+1);
-			scrollToIndex(i);
-		});
-
-		carrusel.addEventListener('scroll', ()=>{
-			// debounce ligero
-			clearTimeout(carrusel._t);
-			carrusel._t = setTimeout(()=> updateDots(indexActual()), 80);
+		// Evitar aperturas accidentales de WhatsApp durante el swipe horizontal
+		let startX = 0, startY = 0, moved = false;
+		carrusel.addEventListener('pointerdown', (e)=>{ startX = e.clientX; startY = e.clientY; moved = false; }, { passive:true });
+		carrusel.addEventListener('pointermove', (e)=>{
+			if(Math.abs(e.clientX - startX) > 8 || Math.abs(e.clientY - startY) > 8){ moved = true; }
 		}, { passive:true });
+		carrusel.addEventListener('click', (e)=>{
+			if(moved){ e.stopPropagation(); e.preventDefault(); }
+		}, true);
 	}
 
 			// Construye una frase natural por ítem, p.ej. "Huevo Extra x30" -> "quiero 30 huevos extra"

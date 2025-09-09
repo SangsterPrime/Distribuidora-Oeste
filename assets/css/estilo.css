@@ -133,8 +133,10 @@ body{
 .scroll-promos .producto{width:clamp(240px, 70vw, 320px);flex:0 0 auto;scroll-snap-align:center;padding:10px}
 
 /* Ajustes de proporción/typography para el preview del hero en index */
+.scroll-promos#listaPromos{gap:0;padding-inline:0;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain}
+.scroll-promos#listaPromos::-webkit-scrollbar{display:none}
+.scroll-promos#listaPromos .producto{width:100%;flex:0 0 100%;scroll-snap-align:center;background:transparent;border:0;box-shadow:none;padding:0;gap:0}
 .scroll-promos#listaPromos .producto__img{aspect-ratio:1/1; border-radius:14px; overflow:hidden}
-.scroll-promos#listaPromos .producto{background:transparent;border:0;box-shadow:none;padding:0;gap:0}
 .scroll-promos#listaPromos .producto__img img{width:100%;height:100%;object-fit:cover}
 .scroll-promos#listaPromos .producto__titulo,
 .scroll-promos#listaPromos .producto__desc,
@@ -162,6 +164,12 @@ body{
 .hero .hero__contenido > .btn{margin-top:14px}
 .scroll-promos__dot{width:10px;height:10px;border-radius:999px;background:#2b2e40;border:0;cursor:pointer}
 .scroll-promos__dot.activo{background:var(--ok);box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+
+/* Mejoras móviles: targets más grandes y slider más amigable */
+@media (max-width: 520px){
+	.scroll-promos__arrow{width:48px;height:48px}
+	.scroll-promos__dot{width:11px;height:11px}
+}
 
 @media (hover:hover){
 	.producto:hover{transform:translateY(-2px)}
