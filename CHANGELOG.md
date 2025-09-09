@@ -16,6 +16,21 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
 ### Eliminado
 - (pendiente)
 
+## [1.2.0] - 2025-09-08
+### Añadido
+- Vista previa de “Promociones destacadas” también en la portada (index), colocada dentro del hero entre el texto y el botón “Ver promociones”.
+- Promoción #4: “Carbón al mayor 2x5” con imagen, precio mostrado “2 x $5.000” y CTA a WhatsApp.
+- Nueva categoría/filtro “Carbón” en el catálogo y nuevo producto “Carbón 1 unidad” a $3.000 con opción de agregar al carrito y pedir por WhatsApp.
+- Panel del carrito agregado a la página `html/promociones.html` (idéntico al de la portada), con formulario de Nombre/Dirección/Notas.
+
+### Cambiado
+- Presentación de imágenes en Promociones: relación de aspecto unificada (3/5) y “object-fit: cover” para evitar bandas negras; las promos #1, #2 y #3 quedan con el mismo “port”.
+- Reubicada la sección de promociones del inicio: ahora la preview vive dentro del hero para mayor visibilidad.
+
+### Corregido
+- Las promos podían no mostrar imagen por un error de JS al no existir el panel de carrito en la página; se añadieron comprobaciones en `renderCarrito`, `abrirCarrito` y `cerrarCarrito` para tolerar páginas sin carrito y evitar el crash, permitiendo que el loader quite el skeleton.
+- Comportamiento consistente de clic en tarjetas de promociones: además del botón, tocar la tarjeta abre WhatsApp (si no se pulsa otro control).
+
 ## [1.1.1] - 2025-09-05
 ### Cambiado
 - Licencia S4ngster 2025: se aclara el alcance (permite despliegue público sin distribuir código), entornos/copias (dev/staging/prod y backups), privacidad/datos personales (uso de WhatsApp), duración/terminación, cesión por reorganización y disposiciones legales (acuerdo íntegro, divisibilidad, idioma).

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Promociones | Distribuidora Oeste - VitalCO</title>
+    <meta name="description" content="Promociones y combos de Distribuidora Oeste - VitalCO." />
+    <link rel="stylesheet" href="../assets/css/estilo.css" />
+    <link rel="icon" href="../assets/img/logo.jpg" type="image/jpeg" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="../assets/img/logo.jpg" alt="Logo VitalCO" style="height:1em;width:auto;vertical-align:-0.2em;margin-right:.35em;" loading="eager" decoding="async">
+        VitalCO - Distribuidora Oeste
+      </div>
+      <nav class="nav">
+        <a href="../index.html#menu">Catálogo</a>
+        <a href="./promociones.html" aria-current="page">Promociones</a>
+        <button id="abrirCarrito" class="btn btn--ghost" aria-label="Abrir carrito">
+          🛒 <span id="contadorCarrito" class="badge">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="seccion" style="max-width: 960px;">
+      <header class="seccion__header">
+        <h2>Promociones destacadas</h2>
+        <p class="producto__desc">Ofertas por tiempo limitado. Escríbenos por WhatsApp para coordinar tu pedido.</p>
+      </header>
+
+      <div class="grid" id="listaPromos">
+        <!-- Promo 1 -->
+        <article class="producto" data-id="promo_1" data-nombre="Promo #1: 2 recargas + 1 bandeja de huevos 20 unid" data-precio="0">
+          <div class="producto__img img-cargando">
+            <img src="../assets/img/Promo1.jpg" alt="Promo #1: 2 recargas + 1 bandeja de huevos 20 unid." loading="lazy" width="768" height="1280" decoding="async">
+          </div>
+          <h3 class="producto__titulo">Promo #1</h3>
+          <p class="producto__desc">2 recargas + 1 bandeja de huevos 20 unid.</p>
+          <div class="producto__precio" data-precio-texto data-fijo="true">consultar precio</div>
+          <div class="acciones">
+            <button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+        <!-- Promo 2 -->
+        <article class="producto" data-id="promo_2" data-nombre="Promo #2: 2 recargas + 1 bandeja de huevos 30 unid" data-precio="0">
+          <div class="producto__img img-cargando">
+            <img src="../assets/img/promo2.jpg" alt="Promo #2: 2 recargas + 1 bandeja de huevos 30 unid." loading="lazy" width="768" height="1280" decoding="async">
+          </div>
+          <h3 class="producto__titulo">Promo #2</h3>
+          <p class="producto__desc">2 recargas + 1 bandeja de huevos 30 unid.</p>
+          <div class="producto__precio" data-precio-texto data-fijo="true">consultar precio</div>
+          <div class="acciones">
+            <button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+        <!-- Promo 3 -->
+        <article class="producto" data-id="promo_3" data-nombre="Promo #3: 3 recargas + 2 bandejas de huevos + carbón 2,5 kg" data-precio="19990">
+          <div class="producto__img img-cargando">
+            <img src="../assets/img/promo3.jpg" alt="Promo #3: 3 recargas + 2 bandejas de huevos + 1 carbón 2,5 kg." loading="lazy" width="768" height="768" decoding="async">
+          </div>
+          <h3 class="producto__titulo">Promo #3</h3>
+          <p class="producto__desc">3 recargas + 2 bandejas de huevos + 1 carbón 2,5 kg.</p>
+          <div class="producto__precio" data-precio-texto data-fijo="true">$19.990</div>
+          <div class="acciones">
+            <button class="btn add-to-cart">Agregar</button>
+            <button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+        <!-- Promo 4 -->
+        <article class="producto" data-id="promo_4" data-nombre="Promo #4: Carbón al mayor 2x5" data-precio="5000">
+          <div class="producto__img img-cargando">
+            <img src="../assets/img/carbon.jpg" alt="Promo #4: Carbón al mayor 2 x $5.000" loading="lazy" width="768" height="1280" decoding="async">
+          </div>
+          <h3 class="producto__titulo">Promo #4</h3>
+          <p class="producto__desc">Carbón al mayor: 2 unidades por $5.000.</p>
+          <div class="producto__precio" data-precio-texto data-fijo="true">2 x $5.000</div>
+          <div class="acciones">
+            <button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+          </div>
+        </article>
+      </div>
+
+      <p class="producto__desc">¿Buscas otra combinación? Escríbenos y armamos tu promo 😉</p>
+    </main>
+
+    <!-- Carrito lateral (igual al de la página principal) -->
+    <aside id="panelCarrito" class="carrito" aria-hidden="true" aria-labelledby="tituloCarrito" tabindex="-1">
+      <div class="carrito__cabecera">
+        <h2 id="tituloCarrito">Tu carrito</h2>
+        <button id="cerrarCarrito" class="icon-btn" aria-label="Cerrar">✖</button>
+      </div>
+      <div id="carritoItems" class="carrito__items" aria-live="polite"></div>
+      <div class="carrito__resumen">
+        <div class="linea">
+          <span>Subtotal</span>
+          <strong id="carritoSubtotal">$0</strong>
+        </div>
+        <div class="linea total">
+          <span>Total</span>
+          <strong id="carritoTotal">$0</strong>
+        </div>
+        <div class="form">
+          <label class="campo">
+            <span>Nombre</span>
+            <input id="cliNombre" type="text" placeholder="Tu nombre" autocomplete="name" />
+          </label>
+          <label class="campo">
+            <span>Dirección</span>
+            <input id="cliDireccion" type="text" placeholder="Calle, número, barrio" autocomplete="address-line1" />
+          </label>
+          <label class="campo">
+            <span>Notas</span>
+            <textarea id="cliNotas" rows="2" placeholder="Referencias, horario, piso…"></textarea>
+          </label>
+        </div>
+        <small class="nota">Precios con IVA incluido.</small>
+        <button id="btnPagar" class="btn btn--full">Pedir por WhatsApp</button>
+      </div>
+    </aside>
+
+    <div id="overlay" class="overlay" hidden></div>
+    <div id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../assets/js/controles.js" defer></script>
+  </body>
+  </html>

@@ -10,14 +10,19 @@ Licenciado únicamente a Distribuidora Oeste bajo Licencia S4ngster 2025.
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Distribuidora Oeste - VitalCO | Catálogo</title>
 		<meta name="description" content="Distribuidora Oeste - VitalCO: recargas de agua, huevos, accesorios, dispensadores eléctricos y organizadores. Agrega al carrito y arma tu pedido." />
-		<link rel="stylesheet" href="./estilo.css" />
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💧</text></svg>" />
+		<link rel="stylesheet" href="assets/css/estilo.css" />
+		<link rel="icon" href="assets/img/logo.jpg" type="image/jpeg" />
+		<link rel="shortcut icon" href="assets/img/logo.jpg" type="image/jpeg" />
 	</head>
 	<body>
 		<header class="header">
-			<div class="logo">💧 Distribuidora Oeste - VitalCO</div>
+			<div class="logo">
+				<img src="assets/img/logo.jpg" alt="Logo VitalCO" style="height:1em;width:auto;vertical-align:-0.2em;margin-right:.35em;" loading="eager" decoding="async">
+				VitalCO - Distribuidora Oeste
+			</div>
 					<nav class="nav">
 						<a href="#menu">Catálogo</a>
+						<a href="html/promociones.html">Promociones</a>
 				<button id="abrirCarrito" class="btn btn--ghost" aria-label="Abrir carrito">
 					🛒 <span id="contadorCarrito" class="badge">0</span>
 				</button>
@@ -27,9 +32,53 @@ Licenciado únicamente a Distribuidora Oeste bajo Licencia S4ngster 2025.
 		<main>
 			<section class="hero">
 				<div class="hero__contenido">
-					  <h1>Hidratación, hogar y más</h1>
-					  <p>Recargas de agua, huevos frescos y soluciones para tu espacio.</p>
-					  <a class="btn" href="#menu">Ver catálogo</a>
+					  <h1>Promociones</h1>
+					  <p>Combos y descuentos por tiempo limitado. ¡Aprovecha ahora!</p>
+
+					  <!-- Preview de promociones dentro del hero -->
+					  <div class="grid" id="listaPromos" style="margin:16px 0 12px;">
+						<!-- Promo 1 -->
+						<article class="producto" data-id="promo_1" data-nombre="Promo #1: 2 recargas + 1 bandeja de huevos 20 unid" data-precio="0">
+							<div class="producto__img img-cargando">
+								<img src="assets/img/Promo1.jpg" alt="Promo #1: 2 recargas + 1 bandeja de huevos 20 unid." loading="lazy" width="768" height="1280" decoding="async">
+							</div>
+							<h3 class="producto__titulo">Promo #1</h3>
+							<p class="producto__desc">2 recargas + 1 bandeja de huevos 20 unid.</p>
+							<div class="producto__precio" data-precio-texto data-fijo="true">consultar precio</div>
+							<div class="acciones">
+								<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+							</div>
+						</article>
+
+						<!-- Promo 2 -->
+						<article class="producto" data-id="promo_2" data-nombre="Promo #2: 2 recargas + 1 bandeja de huevos 30 unid" data-precio="0">
+							<div class="producto__img img-cargando">
+								<img src="assets/img/promo2.jpg" alt="Promo #2: 2 recargas + 1 bandeja de huevos 30 unid." loading="lazy" width="768" height="1280" decoding="async">
+							</div>
+							<h3 class="producto__titulo">Promo #2</h3>
+							<p class="producto__desc">2 recargas + 1 bandeja de huevos 30 unid.</p>
+							<div class="producto__precio" data-precio-texto data-fijo="true">consultar precio</div>
+							<div class="acciones">
+								<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+							</div>
+						</article>
+
+						<!-- Promo 3 -->
+						<article class="producto" data-id="promo_3" data-nombre="Promo #3: 3 recargas + 2 bandejas de huevos + carbón 2,5 kg" data-precio="19990">
+							<div class="producto__img img-cargando">
+								<img src="assets/img/promo3.jpg" alt="Promo #3: 3 recargas + 2 bandejas de huevos + 1 carbón 2,5 kg." loading="lazy" width="768" height="768" decoding="async">
+							</div>
+							<h3 class="producto__titulo">Promo #3</h3>
+							<p class="producto__desc">3 recargas + 2 bandejas de huevos + 1 carbón 2,5 kg.</p>
+							<div class="producto__precio" data-precio-texto data-fijo="true">$19.990</div>
+							<div class="acciones">
+								<button class="btn add-to-cart">Agregar</button>
+								<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+							</div>
+						</article>
+					  </div>
+
+					  <a class="btn" href="html/promociones.html">Ver promociones</a>
 				</div>
 			</section>
 
@@ -40,6 +89,8 @@ Licenciado únicamente a Distribuidora Oeste bajo Licencia S4ngster 2025.
 									<button class="chip activa" data-filtro="todos" role="tab" aria-selected="true">Todos los artículos</button>
 									<button class="chip" data-filtro="recargas" role="tab">Recargas de agua</button>
 									<button class="chip" data-filtro="huevos" role="tab">Huevos</button>
+									<button class="chip" data-filtro="huevos-super" role="tab">Huevos Súper</button>
+								<button class="chip" data-filtro="carbon" role="tab">Carbón</button>
 									<button class="chip" data-filtro="accesorios" role="tab">Accesorios</button>
 									<button class="chip" data-filtro="dispensadores" role="tab">Dispensadores eléctricos</button>
 									<button class="chip" data-filtro="organizadores" role="tab">Organizadores de espacios</button>
@@ -49,87 +100,156 @@ Licenciado únicamente a Distribuidora Oeste bajo Licencia S4ngster 2025.
 				<div class="grid" id="listaProductos">
 								<!-- Recargas de agua -->
 											<article class="producto" data-categoria="recargas" data-id="recarga_2" data-nombre="Recarga x2 botellones 20L" data-precio="4600">
-									<div class="producto__img img-cargando"><img src="./imagenes/2recarga.JPG" alt="Recarga de agua por 2 botellones" loading="lazy" width="640" height="480" decoding="async"></div>
+									<div class="producto__img img-cargando"><img src="assets/img/2recarga.JPG" alt="Recarga de agua por 2 botellones" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Recarga x2 botellones 20L</h3>
 									<p class="producto__desc">Servicio de recarga a domicilio.</p>
 												<div class="producto__precio" data-precio-texto>$4.600</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 											<article class="producto" data-categoria="recargas" data-id="recarga_3" data-nombre="Recarga x3 botellones 20L" data-precio="6900">
-									<div class="producto__img img-cargando"><img src="./imagenes/3recargas.JPG" alt="Recarga de agua por 3 botellones" loading="lazy" width="640" height="480" decoding="async"></div>
+									<div class="producto__img img-cargando"><img src="assets/img/3recargas.JPG" alt="Recarga de agua por 3 botellones" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Recarga x3 botellones 20L</h3>
 									<p class="producto__desc">Ideal para la semana.</p>
 												<div class="producto__precio" data-precio-texto>$6.900</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 
 								<!-- Huevos -->
-														<article class="producto" data-categoria="huevos" data-id="huevo_30" data-nombre="Huevo Extra x30" data-precio="18000">
-															<div class="producto__img img-cargando"><img src="./imagenes/30huevos.JPG" alt="Cubeta de 30 huevos Extra" loading="lazy" width="640" height="480" decoding="async"></div>
-												<h3 class="producto__titulo">Huevo Extra x30</h3>
+														<article class="producto" data-categoria="huevos" data-id="huevo_30" data-nombre="Huevos x30" data-precio="8000">
+															<div class="producto__img img-cargando"><img src="assets/img/30huevos.JPG" alt="Cubeta de 30 huevos" loading="lazy" width="640" height="480" decoding="async"></div>
+												<h3 class="producto__titulo">Huevos</h3>
 									<p class="producto__desc">Frescos y seleccionados.</p>
-									<div class="producto__precio" data-precio-texto>$18.000</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="producto__precio" data-precio-texto data-fijo="true">8.000 los 30</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
-														<article class="producto" data-categoria="huevos" data-id="huevo_180" data-nombre="Huevo Extra caja x180" data-precio="95000">
-															<div class="producto__img img-cargando"><img src="./imagenes/180caja.JPG" alt="Caja de 180 huevos Extra" loading="lazy" width="640" height="480" decoding="async"></div>
-												<h3 class="producto__titulo">Huevo Extra caja x180</h3>
+
+								<!-- Huevos Súper -->
+								<article class="producto" data-categoria="huevos-super" data-id="huevo_super_30" data-nombre="Huevos Súper x30" data-precio="6900">
+									<div class="producto__img img-cargando"><img src="assets/img/30huevos2.JPG" alt="Bandeja de 30 Huevos Súper" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Huevos Súper</h3>
+									<p class="producto__desc">Bandeja por 30 unidades.</p>
+									<div class="producto__precio" data-precio-texto data-fijo="true">6.900 los 30</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
+								</article>
+
+								<!-- Huevos caja (Jumbo/Extra/Súper) -->
+								<article class="producto" data-categoria="huevos" data-id="huevo_caja_var" data-nombre="Huevos caja (Jumbo/Extra/Súper)" data-precio="0">
+									<div class="producto__img img-cargando"><img src="assets/img/huevosxmayor.jpg" alt="Caja de huevos Jumbo, Extra y Súper" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Huevos caja: Jumbo / Extra / Súper</h3>
+									<p class="producto__desc">Al mayor y detalle. Consulta disponibilidad.</p>
+									<div class="producto__precio" data-precio-texto data-fijo="true">consultar precio la caja</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
+								</article>
+
+								<!-- Carbón -->
+								<article class="producto" data-categoria="carbon" data-id="carbon_unidad" data-nombre="Carbón 1 unidad" data-precio="3000">
+									<div class="producto__img img-cargando"><img src="assets/img/carbon.jpg" alt="Saco de carbón premium" loading="lazy" width="640" height="480" decoding="async"></div>
+									<h3 class="producto__titulo">Carbón</h3>
+									<p class="producto__desc">Al mayor y detalle.</p>
+									<div class="producto__precio" data-precio-texto>$3.000</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
+								</article>
+														<article class="producto" data-categoria="huevos" data-id="huevo_180" data-nombre="Huevos caja" data-precio="0">
+															<div class="producto__img img-cargando"><img src="assets/img/180caja.JPG" alt="Caja de huevos" loading="lazy" width="640" height="480" decoding="async"></div>
+												<h3 class="producto__titulo">Huevos</h3>
 									<p class="producto__desc">Para negocios o familias grandes.</p>
-									<div class="producto__precio" data-precio-texto>$95.000</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="producto__precio" data-precio-texto data-fijo="true">consultar precio la caja</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 
 								<!-- Accesorios -->
 								<article class="producto" data-categoria="organizadores" data-id="pack_bidones" data-nombre="Pack para bidones" data-precio="55000">
-									<div class="producto__img img-cargando"><img src="./imagenes/packforbidones.JPG" alt="Pack de accesorios para bidones" loading="lazy" width="640" height="480" decoding="async"></div>
+									<div class="producto__img img-cargando"><img src="assets/img/packforbidones.JPG" alt="Pack de accesorios para bidones" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Pack para bidones</h3>
 									<p class="producto__desc">Tapas, picos y sellos.</p>
 									<div class="producto__precio" data-precio-texto>$55.000</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 											<article class="producto" data-categoria="accesorios" data-id="disp_mesa" data-nombre="Dispensador de mesa" data-precio="6990">
-									<div class="producto__img img-cargando"><img src="./imagenes/dispensordemesa.JPG" alt="Dispensador de mesa para botellón" loading="lazy" width="640" height="480" decoding="async"></div>
+									<div class="producto__img img-cargando"><img src="assets/img/dispensordemesa.JPG" alt="Dispensador de mesa para botellón" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Dispensador de mesa</h3>
 									<p class="producto__desc">Compacto y práctico.</p>
 												<div class="producto__precio" data-precio-texto>$6.990</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
-											<article class="producto" data-categoria="dispensadores" data-id="disp_pedestal" data-nombre="Dispensador pedestal" data-precio="75000">
-									<div class="producto__img img-cargando"><img src="./imagenes/dispensadorpedestal.JPG" alt="Dispensador de pedestal" loading="lazy" width="640" height="480" decoding="async"></div>
+											<article class="producto" data-categoria="dispensadores" data-id="disp_pedestal" data-nombre="Dispensador pedestal" data-precio="0">
+									<div class="producto__img img-cargando"><img src="assets/img/dispensadorpedestal.JPG" alt="Dispensador de pedestal" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Dispensador pedestal</h3>
 									<p class="producto__desc">Para oficinas y salas.</p>
-									<div class="producto__precio" data-precio-texto>$75.000</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="producto__precio" data-precio-texto data-fijo="true">consultar el precio</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 
 								<!-- Dispensadores eléctricos -->
 											<article class="producto" data-categoria="accesorios" data-id="bomba_usb" data-nombre="Bomba eléctrica USB" data-precio="3990">
-									<div class="producto__img img-cargando"><img src="./imagenes/bombaUSB.JPG" alt="Bomba eléctrica USB para agua" loading="lazy" width="640" height="480" decoding="async"></div>
+									<div class="producto__img img-cargando"><img src="assets/img/bombaUSB.JPG" alt="Bomba eléctrica USB para agua" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Bomba eléctrica USB</h3>
 									<p class="producto__desc">Recargable, fácil de usar.</p>
 												<div class="producto__precio" data-precio-texto>$3.990</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 											<article class="producto" data-categoria="accesorios" data-id="bomba_usb_premium" data-nombre="Bomba USB Premium" data-precio="9990">
-									<div class="producto__img img-cargando"><img src="./imagenes/bombaUSBpremium.JPG" alt="Bomba eléctrica USB premium" loading="lazy" width="640" height="480" decoding="async"></div>
+									<div class="producto__img img-cargando"><img src="assets/img/bombaUSBpremium.JPG" alt="Bomba eléctrica USB premium" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Bomba USB Premium</h3>
 									<p class="producto__desc">Mayor caudal y autonomía.</p>
 												<div class="producto__precio" data-precio-texto>$9.990</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
-								<article class="producto" data-categoria="dispensadores" data-id="disp_lb_b2" data-nombre="Dispensador LB-B2" data-precio="90000">
-									<div class="producto__img img-cargando"><img src="./imagenes/LB-B2.JPG" alt="Dispensador modelo LB-B2" loading="lazy" width="640" height="480" decoding="async"></div>
+								<article class="producto" data-categoria="dispensadores" data-id="disp_lb_b2" data-nombre="Dispensador LB-B2" data-precio="0">
+									<div class="producto__img img-cargando"><img src="assets/img/LB-B2.JPG" alt="Dispensador modelo LB-B2" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Dispensador LB-B2</h3>
 									<p class="producto__desc">Robusto y eficiente.</p>
-									<div class="producto__precio" data-precio-texto>$90.000</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="producto__precio" data-precio-texto data-fijo="true">consultar precio</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
-								<article class="producto" data-categoria="dispensadores" data-id="disp_sm_v1" data-nombre="Dispensador SM-V1" data-precio="110000">
-									<div class="producto__img img-cargando"><img src="./imagenes/dispensadorSM-V1.JPG" alt="Dispensador modelo SM-V1" loading="lazy" width="640" height="480" decoding="async"></div>
+								<article class="producto" data-categoria="dispensadores" data-id="disp_sm_v1" data-nombre="Dispensador SM-V1" data-precio="0">
+									<div class="producto__img img-cargando"><img src="assets/img/dispensadorSM-V1.JPG" alt="Dispensador modelo SM-V1" loading="lazy" width="640" height="480" decoding="async"></div>
 									<h3 class="producto__titulo">Dispensador SM-V1</h3>
 									<p class="producto__desc">Moderno y silencioso.</p>
-									<div class="producto__precio" data-precio-texto>$110.000</div>
-									<button class="btn add-to-cart">Agregar</button>
+									<div class="producto__precio" data-precio-texto data-fijo="true">consultar precio</div>
+									<div class="acciones">
+										<button class="btn add-to-cart">Agregar</button>
+										<button class="btn btn--ghost pedir-wsp">Pedir por WhatsApp</button>
+									</div>
 								</article>
 
 								<!-- Organizadores -->
@@ -181,6 +301,6 @@ Licenciado únicamente a Distribuidora Oeste bajo Licencia S4ngster 2025.
 			<small>© <span id="anio"></span> Distribuidora Oeste - VitalCO.</small>
 		</footer>
 
-		<script src="./controles.js" defer></script>
+		<script src="assets/js/controles.js" defer></script>
 	</body>
 	</html>
