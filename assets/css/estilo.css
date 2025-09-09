@@ -41,6 +41,20 @@ body{
 .badge{background:var(--brand);color:#111;border-radius:999px;padding:2px 8px;margin-left:6px;font-weight:800}
 .badge--bump{animation:badgeBump .35s ease}
 
+/* WhatsApp: hacer el botón de pedir más visible y armónico */
+.btn.pedir-wsp,
+.btn--ghost.pedir-wsp{
+	background:linear-gradient(135deg, var(--ok), #16a34a);
+	color:#0d1512;
+	border:0;
+}
+.btn.pedir-wsp:hover{filter:brightness(1.06)}
+.btn.pedir-wsp:focus-visible{
+	outline:2px solid rgba(34,197,94,.6);
+	outline-offset:2px;
+	box-shadow:0 0 0 3px rgba(34,197,94,.25), var(--shadow);
+}
+
 .hero{display:grid;place-items:center;min-height:46vh;
 	background:radial-gradient(800px 400px at 80% -20%, rgba(0,153,255,.18), transparent 60%);
 }
