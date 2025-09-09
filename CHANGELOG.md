@@ -8,10 +8,13 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
 - (pendiente)
 
 ### Cambiado
-- (pendiente)
+- Botón “Pedir por WhatsApp”: color más visible y armónico, con mejor foco accesible.
+- Preview del hero: tarjetas cuadradas con scroll-snap centrado y controles ligeros (flechas y puntos),
+	con la paginación ubicada debajo del carrusel y el botón “Ver promociones” desplazado un poco más abajo.
 
 ### Corregido
-- (pendiente)
+- Promo #1 en la preview: reencuadre de imagen (object-position) para que se aprecie mejor el contenido
+	dentro del formato cuadrado, manteniendo “object-fit: cover” (sin bandas negras).
 
 ### Eliminado
 - (pendiente)
