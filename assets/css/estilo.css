@@ -129,15 +129,15 @@ body{
 #listaPromos .producto__img img{width:100%; height:100%; max-height:none; object-fit:cover}
 
 /* Scroll horizontal para el preview de promociones del hero (solo en index) */
-.scroll-promos{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;scroll-snap-stop:always;-webkit-overflow-scrolling:touch;padding-inline:10vw;scroll-padding-inline:10vw}
+.scroll-promos{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-inline:10vw;scroll-padding-inline:10vw}
 .scroll-promos::-webkit-scrollbar{height:8px}
 .scroll-promos::-webkit-scrollbar-thumb{background:#2b2e40;border-radius:999px}
-.scroll-promos .producto{width:clamp(240px, 70vw, 320px);flex:0 0 auto;scroll-snap-align:center;padding:10px}
+.scroll-promos .producto{width:clamp(240px, 70vw, 320px);flex:0 0 auto;scroll-snap-align:center;scroll-snap-stop:always;padding:10px}
 
 /* Ajustes de proporción/typography para el preview del hero en index */
 .scroll-promos#listaPromos{gap:0;padding-inline:0;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;touch-action:pan-x pinch-zoom}
 .scroll-promos#listaPromos::-webkit-scrollbar{display:none}
-.scroll-promos#listaPromos .producto{width:100%;flex:0 0 100%;scroll-snap-align:center;background:transparent;border:0;box-shadow:none;padding:0;gap:0}
+.scroll-promos#listaPromos .producto{width:100%;flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;background:transparent;border:0;box-shadow:none;padding:0;gap:0}
 .scroll-promos#listaPromos .producto__img{aspect-ratio:1/1; border-radius:14px; overflow:hidden}
 .scroll-promos#listaPromos .producto__img img{width:100%;height:100%;object-fit:cover;backface-visibility:hidden;transform:translateZ(0)}
 .scroll-promos#listaPromos .producto__img img{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
@@ -150,6 +150,13 @@ body{
 .scroll-promos#listaPromos .producto__precio{font-size:14px}
 .scroll-promos .acciones .add-to-cart{display:none}
 .scroll-promos .btn{padding:8px 10px;border-radius:8px;font-size:14px}
+
+/* Desktop: hacer el carrusel del hero más elegante y menos grande */
+@media (min-width: 900px){
+	.scroll-promos#listaPromos{ gap:16px; padding-inline:10vw; scroll-padding-inline:10vw }
+	.scroll-promos#listaPromos .producto{ flex:0 0 clamp(380px, 42vw, 520px) }
+	.scroll-promos#listaPromos .producto__img{ aspect-ratio:4/3; border-radius:16px }
+}
 
 /* Controles del carrusel (hero) */
 .scroll-promos__arrow{
