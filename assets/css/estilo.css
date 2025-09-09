@@ -26,6 +26,7 @@ body{
 	padding:12px 18px; backdrop-filter:saturate(1.2) blur(6px);
 	background:rgba(15,15,18,.55); border-bottom:1px solid #1f2230;
 }
+.header{ padding-top: calc(12px + env(safe-area-inset-top)) }
 .logo{font-weight:800;letter-spacing:.3px}
 .nav{display:flex;gap:12px;align-items:center}
 .nav a{color:var(--text);text-decoration:none;opacity:.9}
@@ -121,6 +122,7 @@ body{
 .overlay[hidden]{display:none !important}
 
 .footer{padding:20px 18px;color:var(--muted);text-align:center;border-top:1px solid #1f2230}
+.footer{ padding-bottom: calc(20px + env(safe-area-inset-bottom)) }
 
 /* Promociones: forzar mismo formato vertical y sin bandas negras */
 #listaPromos .producto__img{aspect-ratio:3/5; overflow:hidden}
@@ -133,11 +135,12 @@ body{
 .scroll-promos .producto{width:clamp(240px, 70vw, 320px);flex:0 0 auto;scroll-snap-align:center;padding:10px}
 
 /* Ajustes de proporción/typography para el preview del hero en index */
-.scroll-promos#listaPromos{gap:0;padding-inline:0;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain}
+.scroll-promos#listaPromos{gap:0;padding-inline:0;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;touch-action:pan-x pinch-zoom}
 .scroll-promos#listaPromos::-webkit-scrollbar{display:none}
 .scroll-promos#listaPromos .producto{width:100%;flex:0 0 100%;scroll-snap-align:center;background:transparent;border:0;box-shadow:none;padding:0;gap:0}
 .scroll-promos#listaPromos .producto__img{aspect-ratio:1/1; border-radius:14px; overflow:hidden}
 .scroll-promos#listaPromos .producto__img img{width:100%;height:100%;object-fit:cover}
+.scroll-promos#listaPromos .producto__img img{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .scroll-promos#listaPromos .producto__titulo,
 .scroll-promos#listaPromos .producto__desc,
 .scroll-promos#listaPromos .producto__precio,
