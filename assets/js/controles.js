@@ -193,8 +193,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			const card = pedirWsp.closest('.producto');
 			if(card){
 				const nombre = card.getAttribute('data-nombre') || '';
-				const precio = Number(card.getAttribute('data-precio')) || 0;
-				const texto = `Hola, quiero pedir:\n• ${nombre}${precio>0?` (${formato.format(precio)})`:''}\n¿Me confirmas disponibilidad y tiempo de entrega?`;
+				const precioNum = Number(card.getAttribute('data-precio')) || 0;
+				const precioEl = card.querySelector('.producto__precio');
+				const precioTxt = precioEl ? (precioEl.textContent || '').trim() : '';
+				const detallePrecio = precioTxt
+					? ` — ${precioTxt}`
+					: (precioNum>0 ? ` (${formato.format(precioNum)})` : '');
+				const texto = `Hola, quiero pedir:\n• ${nombre}${detallePrecio}\n¿Me confirmas disponibilidad y tiempo de entrega?`;
 				openWhatsApp(texto);
 			}
 			return;
@@ -204,8 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		const promoCard = tgt.closest('#listaPromos .producto');
 		if(promoCard && !tgt.closest('button')){
 			const nombre = promoCard.getAttribute('data-nombre') || '';
-			const precio = Number(promoCard.getAttribute('data-precio')) || 0;
-			const texto = `Hola, me interesa la promoción:\n• ${nombre}${precio>0?` (${formato.format(precio)})`:''}\n¿Me confirmas disponibilidad y tiempo de entrega?`;
+			const precioNum = Number(promoCard.getAttribute('data-precio')) || 0;
+			const precioEl = promoCard.querySelector('.producto__precio');
+			const precioTxt = precioEl ? (precioEl.textContent || '').trim() : '';
+			const detallePrecio = precioTxt
+				? ` — ${precioTxt}`
+				: (precioNum>0 ? ` (${formato.format(precioNum)})` : '');
+			const texto = `Hola, me interesa la promoción:\n• ${nombre}${detallePrecio}\n¿Me confirmas disponibilidad y tiempo de entrega?`;
 			openWhatsApp(texto);
 			return;
 		}

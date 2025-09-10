@@ -5,7 +5,7 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
 
 ## [Unreleased]
 ### Añadido
-- (pendiente)
+- Accesorios: nuevos productos “Dispensador Panda” y “Dispensador Pingüino” con CTA de consulta por WhatsApp (precio a convenir).
 
 ### Cambiado
 - Botón “Pedir por WhatsApp”: color más visible y armónico, con mejor foco accesible.
@@ -14,6 +14,8 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
 - Vista previa del hero en escritorio: tamaño reducido y presentación más amable al consumidor; relación 4:3, mayor separación (gap) y aire lateral. En móvil no hay cambios.
 - Compatibilidad iPhone/Android: safe areas en header/footer y mejoras táctiles (touch-action: pan-x pinch-zoom,
 	desactivar selección/callout en la imagen) para swipe más fluido.
+- WhatsApp (promos y catálogo): el mensaje ahora toma el precio tal como se muestra en la tarjeta (por ejemplo, “2 x $4.990”), en lugar de re-formatear únicamente desde data-precio.
+- Promoción #4 (Carbón al mayor): precio mostrado actualizado a “2 x $4.990” (antes “2 x $5.000”) y uso de la imagen “PromoCarbon.jpg”.
 
 ### Corregido
 - Promo #1 en la preview: reencuadre de imagen (object-position) para que se aprecie mejor el contenido
@@ -23,6 +25,7 @@ Todos los cambios notables de este proyecto se documentan aquí. Formato basado 
  	y hints de render (backface-visibility, translateZ) para un scroll más fluido en iOS.
  - Imagen de Promo #2 actualizada a un asset existente (evita 404 intermitentes en Safari móvil).
 - Android/Samsung: el carrusel ya no “salta” de la promo 1 a la 3; se aplica scroll-snap-stop: always por tarjeta para detener el swipe en cada slide.
+- iOS/Safari: mejora del swipe horizontal en la preview (fallback JS con bloqueo de dirección y -webkit-overflow-scrolling) sin interferir con el scroll vertical.
 
 ### Eliminado
  - Puntos de paginación del carrusel en la preview del hero (la navegación es por swipe y, en escritorio, con flechas).
